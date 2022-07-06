@@ -4,11 +4,22 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ClassComponent from './components/ClassComponent';
+import PropsComponent from './components/Props';
 
 function FunctionComponent() {
+  const cont = 'A component with props';
   return (
     <div className="App">
       <header className="App-header">
+        <PropsComponent
+          normalString="Normal string"
+          justNumber={17}
+          justBoolean={true}
+          anArray={[1, 2, 3]}
+          anObject={{ 'name': 'hector', 'age': 17 }}
+          aFunction={num => num * num}
+          reactComponent={<ClassComponent msg={cont} />}
+        />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -27,11 +38,9 @@ function FunctionComponent() {
 }
 
 function App() {
-  const cont = 'A component with props';
   return (
     <>
       <FunctionComponent />
-      <ClassComponent msg={cont} />
     </>
   );
 }
