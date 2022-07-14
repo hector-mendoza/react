@@ -5,12 +5,19 @@ import logo from './logo.svg';
 import './App.css';
 import ClassComponent from './components/ClassComponent';
 import PropsComponent from './components/Props';
+import State from './components/State';
+import ConditionalRender from './components/ConditionalRender';
+import ElemenetsRender from './components/ElementsRender';
+
 
 function FunctionComponent() {
   const cont = 'A component with props';
   return (
     <div className="App">
       <header className="App-header">
+        <ElemenetsRender />
+        <ConditionalRender />
+        <hr />
         <PropsComponent
           normalString="Normal string"
           justNumber={17}
@@ -32,6 +39,8 @@ function FunctionComponent() {
         >
           Learn React
         </a>
+        <State />
+
       </header>
     </div>
   )
