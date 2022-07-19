@@ -8,6 +8,8 @@ import PropsComponent from './components/Props';
 import State from './components/State';
 import ConditionalRender from './components/ConditionalRender';
 import ElemenetsRender from './components/ElementsRender';
+import Events from './components/Events';
+import { EventsES7 } from './components/EventsES7';
 
 
 function FunctionComponent() {
@@ -15,7 +17,12 @@ function FunctionComponent() {
   return (
     <div className="App">
       <header className="App-header">
+        <EventsES7 />
+        <hr />
+        <Events />
+        <hr />
         <ElemenetsRender />
+        <hr />
         <ConditionalRender />
         <hr />
         <PropsComponent

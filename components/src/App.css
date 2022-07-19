@@ -34,6 +34,8 @@ hr {
   width: 100%;
 }
 
+.counter span:last-child {}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
