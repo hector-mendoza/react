@@ -9,7 +9,7 @@ import State from './components/State';
 import ConditionalRender from './components/ConditionalRender';
 import ElemenetsRender from './components/ElementsRender';
 import Events from './components/Events';
-import { EventsES7 } from './components/EventsES7';
+import { EventsES7, MoreEvents } from './components/EventsES7';
 
 
 function FunctionComponent() {
@@ -17,6 +17,8 @@ function FunctionComponent() {
   return (
     <div className="App">
       <header className="App-header">
+        <MoreEvents />
+        <hr />
         <EventsES7 />
         <hr />
         <Events />
