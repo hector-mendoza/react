@@ -11,13 +11,15 @@ import ElemenetsRender from './components/ElementsRender';
 import Events from './components/Events';
 import { EventsES7, MoreEvents } from './components/EventsES7';
 import ComponentCommunication from './components/ComponentCommunication';
-
+import LifeCyle from './components/LifeCycle';
 
 function FunctionComponent() {
   const cont = 'A component with props';
   return (
     <div className="App">
       <header className="App-header">
+        <LifeCyle />
+        <hr />
         <ComponentCommunication />
         <hr />
         <MoreEvents />
