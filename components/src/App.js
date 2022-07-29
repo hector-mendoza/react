@@ -13,12 +13,15 @@ import { EventsES7, MoreEvents } from './components/EventsES7';
 import ComponentCommunication from './components/ComponentCommunication';
 import LifeCyle from './components/LifeCycle';
 import AjaxAPIs from './components/AjaxAPIs';
+import CounterHooks from './components/CounterHooks';
 
 function FunctionComponent() {
   const cont = 'A component with props';
   return (
     <div className="App">
       <header className="App-header">
+        <CounterHooks name="Daniel" />
+        <hr />
         <AjaxAPIs />
         <hr />
         <LifeCyle />
