@@ -12,12 +12,15 @@ import Events from './components/Events';
 import { EventsES7, MoreEvents } from './components/EventsES7';
 import ComponentCommunication from './components/ComponentCommunication';
 import LifeCyle from './components/LifeCycle';
+import AjaxAPIs from './components/AjaxAPIs';
 
 function FunctionComponent() {
   const cont = 'A component with props';
   return (
     <div className="App">
       <header className="App-header">
+        <AjaxAPIs />
+        <hr />
         <LifeCyle />
         <hr />
         <ComponentCommunication />
