@@ -14,6 +14,7 @@ import ComponentCommunication from './components/ComponentCommunication';
 import LifeCyle from './components/LifeCycle';
 import AjaxAPIs from './components/AjaxAPIs';
 import CounterHooks from './components/CounterHooks';
+import ScrollHooks from './components/ScrollHooks';
 
 function FunctionComponent() {
   const cont = 'A component with props';
@@ -60,6 +61,8 @@ function FunctionComponent() {
           Learn React
         </a>
         <State />
+        <br />
+        <ScrollHooks />
 
       </header>
     </div>
