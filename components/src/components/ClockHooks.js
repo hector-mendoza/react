@@ -20,7 +20,7 @@ export default function ClockHooks() {
             clearInterval(tempo);
         }
         return () => {
-            console.log('Dismount Phase - ComponentDidUnmount');
+            // console.log('Dismount Phase - ComponentDidUnmount');
             clearInterval(tempo);
         }
     }, [visible]);

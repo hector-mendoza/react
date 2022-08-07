@@ -6,7 +6,7 @@ export default function ScrollHooks() {
 
     // Occur only once, when component has been mounted
     useEffect(() => {
-        console.log('Montage Phase - ComponentDidMount');
+        // console.log('Montage Phase - ComponentDidMount');
 
         const detectScroll = () => setScrollY(window.scrollY);
 
@@ -19,21 +19,21 @@ export default function ScrollHooks() {
 
     // Occur every time that our variable state changes
     useEffect(() => {
-        console.log('Update Phase - Only this ComponentDidUpdate');
+        // console.log('Update Phase - Only this ComponentDidUpdate');
 
         // const detectScroll = () => setScrollY(window.scrollY);
         // window.addEventListener('scroll', detectScroll);
     }, [scrollY]);
 
     useEffect(() => {
-        console.log('Update Phase - ComponentDidUpdate');
+        // console.log('Update Phase - ComponentDidUpdate');
 
         // const detectScroll = () => setScrollY(window.scrollY);
         // window.addEventListener('scroll', detectScroll);
     }); // if we don't specify the [] the useEffect will be executed every render
 
     useEffect(() => {
-        console.log('Dismount Phase - ComponentDidUnmount');
+        // console.log('Dismount Phase - ComponentDidUnmount');
 
         // when function React knows that we need to unmount 
         return () => {

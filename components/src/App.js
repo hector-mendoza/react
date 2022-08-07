@@ -16,15 +16,17 @@ import AjaxAPIs from './components/AjaxAPIs';
 import CounterHooks from './components/CounterHooks';
 import ScrollHooks from './components/ScrollHooks';
 import ClockHooks from './components/ClockHooks';
+import AjaxHooks from './components/AjaxHooks';
 
 function FunctionComponent() {
   const cont = 'A component with props';
   return (
     <div className="App">
       <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
         <CounterHooks name="Daniel" />
         <hr />
-        <AjaxAPIs />
+        {/* <AjaxAPIs /> */}
         <hr />
         <LifeCyle />
         <hr />
@@ -49,23 +51,13 @@ function FunctionComponent() {
           aFunction={num => num * num}
           reactComponent={<ClassComponent msg={cont} />}
         />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
         <State />
         <hr />
         <ScrollHooks />
         <hr />
         <ClockHooks />
+        <hr />
+        <AjaxHooks />
       </header>
     </div>
   )
