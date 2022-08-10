@@ -17,6 +17,7 @@ import CounterHooks from './components/CounterHooks';
 import ScrollHooks from './components/ScrollHooks';
 import ClockHooks from './components/ClockHooks';
 import AjaxHooks from './components/AjaxHooks';
+import HooksCustom from './components/HooksCustom';
 
 function FunctionComponent() {
   const cont = 'A component with props';
@@ -58,6 +59,8 @@ function FunctionComponent() {
         <ClockHooks />
         <hr />
         <AjaxHooks />
+        <hr />
+        <HooksCustom />
       </header>
     </div>
   )
