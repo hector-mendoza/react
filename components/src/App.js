@@ -18,6 +18,7 @@ import ScrollHooks from './components/ScrollHooks';
 import ClockHooks from './components/ClockHooks';
 import AjaxHooks from './components/AjaxHooks';
 import HooksCustom from './components/HooksCustom';
+import References from './components/References';
 
 function FunctionComponent() {
   const cont = 'A component with props';
@@ -25,8 +26,9 @@ function FunctionComponent() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <CounterHooks name="Daniel" />
+        <References />
         <hr />
+        <CounterHooks name="Daniel" />
         {/* <AjaxAPIs /> */}
         <hr />
         <LifeCyle />
