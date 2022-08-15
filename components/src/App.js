@@ -19,6 +19,8 @@ import AjaxHooks from './components/AjaxHooks';
 import HooksCustom from './components/HooksCustom';
 import References from './components/References';
 import Forms from './components/Forms';
+import Styles from './components/Styles';
+import StylesCSS from './components/Styles.css';
 
 function FunctionComponent() {
   const cont = 'A component with props';
@@ -26,6 +28,8 @@ function FunctionComponent() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Styles />
+        <hr />
         <Forms />
         <hr />
         <References />
