@@ -1,6 +1,5 @@
 // always import React, even if is not needed
 import React from 'react';
-
 import logo from './logo.svg';
 import './App.css';
 import ClassComponent from './components/ClassComponent';
@@ -19,6 +18,7 @@ import ClockHooks from './components/ClockHooks';
 import AjaxHooks from './components/AjaxHooks';
 import HooksCustom from './components/HooksCustom';
 import References from './components/References';
+import Forms from './components/Forms';
 
 function FunctionComponent() {
   const cont = 'A component with props';
@@ -26,6 +26,8 @@ function FunctionComponent() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Forms />
+        <hr />
         <References />
         <hr />
         <CounterHooks name="Daniel" />
