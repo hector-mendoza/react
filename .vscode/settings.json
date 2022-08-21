@@ -1,3 +1,25 @@
 {
-  "cSpell.words": ["pokemons"]
+  "cSpell.words": [
+    "pokemons"
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#127552",
+    "activityBar.background": "#127552",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#4d116e",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#127552",
+    "statusBar.background": "#0b4933",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#127552",
+    "statusBarItem.remoteBackground": "#0b4933",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#0b4933",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#0b493399",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#0b4933"
 }
