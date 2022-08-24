@@ -101,7 +101,7 @@ export default function StyledComponents() {
             </ThemeProvider>
             <ThemeProvider theme={dark}>
                 <BoxRounded>
-                    A dark box
+                    A dark box - that inherit styling
                 </BoxRounded>
             </ThemeProvider>
         </>
