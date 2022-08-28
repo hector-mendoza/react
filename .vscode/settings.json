@@ -4,23 +4,23 @@
     "pokemons"
   ],
   "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#127552",
-    "activityBar.background": "#127552",
-    "activityBar.foreground": "#e7e7e7",
-    "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#4d116e",
-    "activityBarBadge.foreground": "#e7e7e7",
+    "activityBar.activeBackground": "#be66fb",
+    "activityBar.background": "#be66fb",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#fcca83",
+    "activityBarBadge.foreground": "#15202b",
     "commandCenter.border": "#e7e7e799",
-    "sash.hoverBorder": "#127552",
-    "statusBar.background": "#0b4933",
+    "sash.hoverBorder": "#be66fb",
+    "statusBar.background": "#a934fa",
     "statusBar.foreground": "#e7e7e7",
-    "statusBarItem.hoverBackground": "#127552",
-    "statusBarItem.remoteBackground": "#0b4933",
+    "statusBarItem.hoverBackground": "#be66fb",
+    "statusBarItem.remoteBackground": "#a934fa",
     "statusBarItem.remoteForeground": "#e7e7e7",
-    "titleBar.activeBackground": "#0b4933",
+    "titleBar.activeBackground": "#a934fa",
     "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#0b493399",
+    "titleBar.inactiveBackground": "#a934fa99",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#0b4933"
+  "peacock.color": "#a934fa"
 }
