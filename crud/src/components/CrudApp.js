@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import CrudForm from "./CrudForm";
+import CrudTable from "./CrudTable";
 
-import CrudForm from './CrudForm';
-import CrudTable from './CrudTable';
-
-const initialDB = [
+const initialDb = [
     {
         id: 1,
         name: "Seiya",
@@ -32,40 +31,40 @@ const initialDB = [
 ];
 
 const CrudApp = () => {
-
-    const [db, setDb] = useState(initialDB);
+    const [db, setDb] = useState(initialDb);
     const [dataToEdit, setDataToEdit] = useState(null);
 
     const createData = (data) => {
         data.id = Date.now();
-        // console.log(data)
-        setDb(
-            [
-                ...db,
-                data
-            ]
-        );
+        //console.log(data);
+        setDb([...db, data]);
     };
 
     const updateData = (data) => {
-
+        let newData = db.map((el) => (el.id === data.id ? data : el));
+        setDb(newData);
     };
 
-    const deleteData = (id) => {
-
-    };
+    const deleteData = (id) => { };
 
     return (
-        <>
-            <h2>CRUD APP</h2>
-            <CrudForm createData={createData}
-                updateData={updateData}
-                dataToEdit={setDataToEdit} />
-            <CrudTable data={db}
-                dataToEdit={setDataToEdit}
-                deleteData={deleteData} />
-        </>
+        <div>
+            <h2>CRUD App</h2>
+            <article className="grid-1-2">
+                <CrudForm
+                    createData={createData}
+                    updateData={updateData}
+                    dataToEdit={dataToEdit}
+                    setDataToEdit={setDataToEdit}
+                />
+                <CrudTable
+                    data={db}
+                    setDataToEdit={setDataToEdit}
+                    deleteData={deleteData}
+                />
+            </article>
+        </div>
     );
-}
+};
 
 export default CrudApp;
