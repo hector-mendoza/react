@@ -45,7 +45,17 @@ const CrudApp = () => {
         setDb(newData);
     };
 
-    const deleteData = (id) => { };
+    const deleteData = (id) => {
+        let isDelete = window.confirm(`¿estás seguro de eliminar el registro con el ID: ${id}?`);
+
+        if (isDelete) {
+            // if user confirmed
+            let newData = db.filter((el) => (el.id !== id));
+            setDb(newData);
+        } else {
+            return;
+        }
+    };
 
     return (
         <div>
