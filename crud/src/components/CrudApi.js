@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { helpHttp } from "../helpers/helpHttp";
 import CrudForm from "./CrudForm";
 import CrudTable from "./CrudTable";
 
 const CrudApi = () => {
     const [db, setDb] = useState([]);
     const [dataToEdit, setDataToEdit] = useState(null);
+    let api = helpHttp();
+    const url = 'http://localhost:5000/santos';
+
+    useEffect(() => {
+        api.get(url).then(res => {
+            // console.log(res);
+            if (!res.err) {
+                setDb(res);
+            } else {
+                setDb(null);
+            }
+        })
+    }, []);
+
 
     const createData = (data) => {
         data.id = Date.now();
