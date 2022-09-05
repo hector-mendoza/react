@@ -11,7 +11,7 @@ const CrudApi = () => {
     const [dataToEdit, setDataToEdit] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-    // let api = helpHttp();
+    let api = helpHttp();
 
     useEffect(() => {
         setLoading(true);
@@ -31,21 +31,56 @@ const CrudApi = () => {
     const createData = (data) => {
         data.id = Date.now();
         //console.log(data);
-        setDb([...db, data]);
+
+        let options = {
+            body: data,
+            headers: { "content-type": "application/json" }
+        };
+
+        api.post(url, options).then((res) => {
+            if (!res.err) {
+                setDb([...db, res]);
+            } else {
+                setError(res);
+            }
+        });
     };
 
     const updateData = (data) => {
-        let newData = db.map((el) => (el.id === data.id ? data : el));
-        setDb(newData);
+        let endpoint = `${url}/${data.id}`;
+        // console.log(endpoint);
+        let options = {
+            body: data,
+            headers: { "content-type": "application/json" }
+        };
+
+        api.put(endpoint, options).then((res) => {
+            if (!res.err) {
+                let newData = db.map((el) => (el.id === data.id ? data : el));
+                setDb(newData);
+            } else {
+                setError(res);
+            }
+        });
     };
 
     const deleteData = (id) => {
-        let isDelete = window.confirm(`¿estás seguro de eliminar el registro con el ID: ${id}?`);
+        let endpoint = `${url}/${id}`,
+            options = {
+                headers: { "content-type": "application/json" }
+            },
+            isDelete = window.confirm(`¿estás seguro de eliminar el registro con el ID: ${id}?`);
 
+        // if user confirmed
         if (isDelete) {
-            // if user confirmed
-            let newData = db.filter((el) => (el.id !== id));
-            setDb(newData);
+            api.del(endpoint, options).then((res) => {
+                if (!res.err) {
+                    let newData = db.filter((el) => (el.id !== id));
+                    setDb(newData);
+                } else {
+                    setError(res);
+                }
+            });
         } else {
             return;
         }
