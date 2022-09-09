@@ -12,8 +12,8 @@ const SongSearch = () => {
 
     // receive data from form
     const handleSearch = (data) => {
-        console.log(data);
-    }
+        setSearch(data);
+    };
 
     return (
         <>
