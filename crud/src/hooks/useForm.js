@@ -8,16 +8,23 @@ export const useForm = (initialForm, validateForm) => {
     const [response, setResponse] = useState(null);
 
     // eventos
-    const handle = (e) => { }
-
     // mientras escribimos
-    const handleChange = (e) => { }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm({
+            ...form,
+            [name]: value
+        });
+    };
 
     // validaciones
-    const handleBlur = (e) => { }
+    const handleBlur = (e) => {
+        handleChange(e);
+        setErrors(validateForm(form));
+    };
 
     // al enviar
-    const handleSubmit = (e) => { }
+    const handleSubmit = (e) => { };
 
     return { form, errors, loading, response, handleChange, handleBlur, handleSubmit }
 };
