@@ -19,3 +19,4 @@ sample/src/index.js
 sample/src/logo.svg
 sample/src/reportWebVitals.js
 sample/src/setupTests.js
+.vscode/settings.json
