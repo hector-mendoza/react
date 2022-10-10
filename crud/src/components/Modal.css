@@ -1,6 +1,35 @@
 .modal {
-    border: 2px solid #000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .75);
+    display: none;
     border-radius: 15px;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.modal.is-open {
+    display: flex;
+}
+
+.modal-container {
+    position: relative;
+    background-color: #FFF;
     padding: 25px;
-    margin: 2rem;
+    min-width: 320px;
+    max-width: 480px;
+    min-height: 200px;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
 }
