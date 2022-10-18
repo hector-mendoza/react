@@ -13,5 +13,11 @@ hr {
 }
 
 nav a {
-  margin-right: 10px;
+  margin-right: 15px;
+  text-transform: uppercase;
+}
+
+nav .active {
+  font-weight: 600;
+  font-style: italic;
 }

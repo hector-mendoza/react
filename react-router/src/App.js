@@ -1,6 +1,6 @@
 import BasicConcepts from "./components/BasicConcepts";
 
-
+// TODO: Create documentation
 function App() {
   return (
     <div>

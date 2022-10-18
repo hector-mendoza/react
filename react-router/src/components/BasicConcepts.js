@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Error404 from "../pages/Error404";
+import Nav from "./Nav";
 
 // SWITCH was replaced by ROUTES
 const BasicConcepts = () => {
@@ -14,8 +15,10 @@ const BasicConcepts = () => {
             <h2>Basic Concepts</h2>
             <div>
                 <Router>
+                    <Nav />
                     <Routes>
-                        <Route path="/" element={<Home />} />
+                        {/* index => indicates that this is the INDEX of the site */}
+                        <Route index element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
 
