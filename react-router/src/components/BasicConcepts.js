@@ -2,8 +2,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 // import every page/component
+import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Error404 from "../pages/Error404";
 
 // SWITCH was replaced by ROUTES
 const BasicConcepts = () => {
@@ -14,8 +16,11 @@ const BasicConcepts = () => {
                 <Router>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="about" element={<About />} />
-                        <Route path="contact" element={<Contact />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contact" element={<Contact />} />
+
+                        {/* we always need to add the 404 route as the LAST ONE */}
+                        <Route path="*" element={<Error404 />} />
                     </Routes>
                 </Router>
             </div>
@@ -23,19 +28,21 @@ const BasicConcepts = () => {
     );
 };
 
-const Home = () => {
-    return (
-        <>
-            <main>
-                <h2>Welcome to the Homepage!</h2>
-                <p>You can do this, I believe in you</p>
-            </main>
-            <nav>
-                <Link to="/about">About</Link>
-                <Link to="/contact">Contact</Link>
-            </nav>
-        </>
-    )
-};
+// const BasicConcepts = () => {
+//     return (
+//         <>
+//             <h2>Basic Concepts</h2>
+//             <div>
+//                 <Router>
+//                     <Routes>
+//                         <Route path="/" element={<Home />} />
+//                         <Route path="about" element={<About />} />
+//                         <Route path="contact" element={<Contact />} />
+//                     </Routes>
+//                 </Router>
+//             </div>
+//         </>
+//     );
+// };
 
 export default BasicConcepts;
