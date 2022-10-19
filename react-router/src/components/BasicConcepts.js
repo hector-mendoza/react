@@ -1,5 +1,5 @@
 // por comodidad se le asigna el alias de Router
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // import every page/component
 import Home from "../pages/Home";
@@ -7,6 +7,7 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Error404 from "../pages/Error404";
 import Nav from "./Nav";
+import User from "../pages/User";
 
 // SWITCH was replaced by ROUTES
 const BasicConcepts = () => {
@@ -21,6 +22,9 @@ const BasicConcepts = () => {
                         <Route index element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
+
+                        {/* Friendly URL */}
+                        <Route path="/user/:username/:age" element={<User />} />
 
                         {/* we always need to add the 404 route as the LAST ONE */}
                         <Route path="*" element={<Error404 />} />

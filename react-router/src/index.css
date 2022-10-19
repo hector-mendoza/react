@@ -13,8 +13,9 @@ hr {
 }
 
 nav a {
-  margin-right: 15px;
+  line-height: 2;
   text-transform: uppercase;
+  margin-right: 15px;
 }
 
 nav .active {

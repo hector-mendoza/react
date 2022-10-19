@@ -14,6 +14,11 @@ const Nav = () => {
 
             <NavLink to="/about">About</NavLink>
             <NavLink to="/contact">Contact</NavLink>
+
+            {/* Send PARAMS by URL */}
+            <div>
+                <Link to="/user/hector/27">Params => Hector & 27</Link>
+            </div>
         </nav>
     );
 }
