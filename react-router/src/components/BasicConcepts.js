@@ -8,6 +8,7 @@ import Contact from "../pages/Contact";
 import Error404 from "../pages/Error404";
 import Nav from "./Nav";
 import User from "../pages/User";
+import Products from "../pages/Products";
 
 // SWITCH was replaced by ROUTES
 const BasicConcepts = () => {
@@ -22,6 +23,7 @@ const BasicConcepts = () => {
                         <Route index element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/products" element={<Products />} />
 
                         {/* Friendly URL */}
                         <Route path="/user/:username/:age" element={<User />} />

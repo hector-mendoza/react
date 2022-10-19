@@ -8,7 +8,6 @@ const Nav = () => {
             <Link to="/contact">Contact</Link> */}
 
             {/* NavLinks*/}
-
             {/* we add the prop => end,  to ensure this component isn't matched as "active" when its descendant paths are matched. */}
             <NavLink to="/" end>Home</NavLink>
 
@@ -17,7 +16,12 @@ const Nav = () => {
 
             {/* Send PARAMS by URL */}
             <div>
-                <Link to="/user/hector/27">Params => Hector & 27</Link>
+                <NavLink to="/user/hector/27">Params - Hector & 27</NavLink>
+            </div>
+
+            {/* QUERY PARAMS */}
+            <div>
+                <NavLink to="/products">Products</NavLink>
             </div>
         </nav>
     );
