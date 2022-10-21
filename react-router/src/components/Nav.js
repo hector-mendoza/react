@@ -23,6 +23,13 @@ const Nav = () => {
             <div>
                 <NavLink to="/products">Products</NavLink>
             </div>
+
+            {/* QUERY PARAMS */}
+            <div>
+                <span>Redirections: </span>
+                <Link to="/acerca">Acerca de</Link>
+                <Link to="/contacto">Contacto</Link>
+            </div>
         </nav>
     );
 }

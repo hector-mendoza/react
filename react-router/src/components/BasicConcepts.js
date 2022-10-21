@@ -1,5 +1,5 @@
 // por comodidad se le asigna el alias de Router
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 // import every page/component
 import Home from "../pages/Home";
@@ -27,6 +27,10 @@ const BasicConcepts = () => {
 
                         {/* Friendly URL */}
                         <Route path="/user/:username/:age" element={<User />} />
+
+                        {/* Redirections */}
+                        <Route path="/acerca" element={<Navigate to="/about" />} />
+                        <Route path="/contacto" element={<Navigate to="/contact" />} />
 
                         {/* we always need to add the 404 route as the LAST ONE */}
                         <Route path="*" element={<Error404 />} />
