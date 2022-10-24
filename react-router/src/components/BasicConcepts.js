@@ -9,6 +9,7 @@ import Error404 from "../pages/Error404";
 import Nav from "./Nav";
 import User from "../pages/User";
 import Products from "../pages/Products";
+import ReactTopics from "../pages/ReactTopics";
 
 // SWITCH was replaced by ROUTES
 const BasicConcepts = () => {
@@ -31,6 +32,10 @@ const BasicConcepts = () => {
                         {/* Redirections */}
                         <Route path="/acerca" element={<Navigate to="/about" />} />
                         <Route path="/contacto" element={<Navigate to="/contact" />} />
+
+                        {/* Rutas Anidadas/Nested Routes */}
+                        {/* Route to every React topic (*) */}
+                        <Route path="/react/*" element={<ReactTopics />} />
 
                         {/* we always need to add the 404 route as the LAST ONE */}
                         <Route path="*" element={<Error404 />} />

@@ -24,11 +24,17 @@ const Nav = () => {
                 <NavLink to="/products">Products</NavLink>
             </div>
 
-            {/* QUERY PARAMS */}
+            {/* Redirections */}
             <div>
                 <span>Redirections: </span>
                 <Link to="/acerca">Acerca de</Link>
                 <Link to="/contacto">Contacto</Link>
+            </div>
+
+            {/* Rutas Anidadas/Nested Routes */}
+            <div>
+                <span>Rutas Anidadas/Nested Routes: </span>
+                <Link to="/react">React</Link>
             </div>
         </nav>
     );
