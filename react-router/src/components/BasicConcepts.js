@@ -10,6 +10,9 @@ import Nav from "./Nav";
 import User from "../pages/User";
 import Products from "../pages/Products";
 import ReactTopics from "../pages/ReactTopics";
+import Login from "../pages/Login";
+import Dashboard from "../pages/Dashboard";
+import PrivateRoute from "../components/PrivateRoute";
 
 // SWITCH was replaced by ROUTES
 const BasicConcepts = () => {
@@ -36,6 +39,10 @@ const BasicConcepts = () => {
                         {/* Rutas Anidadas/Nested Routes */}
                         {/* Route to every React topic (*) */}
                         <Route path="/react/*" element={<ReactTopics />} />
+
+                        {/* Private Routes */}
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/dashboard" element={<PrivateRoute component={Dashboard} />} />
 
                         {/* we always need to add the 404 route as the LAST ONE */}
                         <Route path="*" element={<Error404 />} />

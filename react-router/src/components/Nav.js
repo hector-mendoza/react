@@ -36,6 +36,13 @@ const Nav = () => {
                 <span>Rutas Anidadas/Nested Routes: </span>
                 <Link to="/react">React</Link>
             </div>
+
+            {/* Private  Routes */}
+            <div>
+                <span>Private  Routes: </span>
+                <Link to="/login">Login</Link>
+                <Link to="/dashboard">Dashboard</Link>
+            </div>
         </nav>
     );
 }
