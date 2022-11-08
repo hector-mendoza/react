@@ -1,4 +1,5 @@
 import BasicConcepts from "./components/BasicConcepts";
+import CrudApi from "./components/CrudApi";
 
 // TODO: Create documentation
 function App() {
@@ -7,7 +8,9 @@ function App() {
       <h1>React Router</h1>
       <a href="https://v5.reactrouter.com/web/guides/quick-start" rel="noreferrer" target="_blank">Docs</a>
       <hr />
-      <BasicConcepts />
+      <CrudApi />
+      {/* <hr />
+      <BasicConcepts /> */}
     </div>
   );
 }
