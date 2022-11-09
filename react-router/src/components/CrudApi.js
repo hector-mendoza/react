@@ -102,34 +102,59 @@ const CrudApi = () => {
                     <Routes>
                         <Route path="santos/*" element={
                             <Routes>
-                                <Route path="/" element={<h2>Home de Santos</h2>} />
-                                <Route path="/agregar" element={<h2>Agregar Santos</h2>} />
-                                <Route path="/editar/:id" element={<h2>Editar Santos</h2>} />
+                                <Route path="/" element={
+                                    <div>
+                                        <h2>Home Santos</h2>
+                                        {
+                                            db &&
+                                            <CrudTable
+                                                data={db}
+                                                setDataToEdit={setDataToEdit}
+                                                deleteData={deleteData}
+                                            />}
+                                        {
+                                            loading && <Loader />
+                                        }
+                                        {
+                                            error && <Message msg={`Error ${error.statusText}`} bgColor="#dc3545" />
+                                        }
+                                    </div>
+                                } />
+                                <Route path="/agregar" element={
+                                    <div>
+                                        <h2>Agregar Santos</h2>
+                                        <CrudForm
+                                            createData={createData}
+                                            updateData={updateData}
+                                            dataToEdit={dataToEdit}
+                                            setDataToEdit={setDataToEdit}
+                                        />
+                                    </div>
+                                } />
+                                <Route path="/editar/:id" element={
+                                    <div>
+                                        <h2>Editar Santos</h2>
+                                        <CrudForm
+                                            createData={createData}
+                                            updateData={updateData}
+                                            dataToEdit={dataToEdit}
+                                            setDataToEdit={setDataToEdit}
+                                        />
+                                    </div>
+                                } />
                                 <Route path="*" element={<Error404 />} />
                             </Routes>
                         } />
                     </Routes>
                 </HashRouter>
-                <CrudForm
+                {/* <CrudForm
                     createData={createData}
                     updateData={updateData}
                     dataToEdit={dataToEdit}
                     setDataToEdit={setDataToEdit}
-                />
+                /> */}
                 {/* if db has something => render CrudTable */}
-                {
-                    db &&
-                    <CrudTable
-                        data={db}
-                        setDataToEdit={setDataToEdit}
-                        deleteData={deleteData}
-                    />}
-                {
-                    loading && <Loader />
-                }
-                {
-                    error && <Message msg={`Error ${error.statusText}`} bgColor="#dc3545" />
-                }
+
             </article>
         </div>
     );
