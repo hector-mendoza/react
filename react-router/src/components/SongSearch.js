@@ -6,11 +6,17 @@ import Loader from "./Loader";
 import { HashRouter, NavLink, Route, Routes } from 'react-router-dom';
 import Error404 from '../pages/Error404';
 
+// just add an empty array if there no songs
+let mySongsInit = JSON.parse(localStorage.getItem("mySongs")) || [];
+
 const SongSearch = () => {
     const [search, setSearch] = useState(null);
     const [bio, setBio] = useState(null);
     const [lyric, setLyric] = useState(null);
     const [loading, setLoading] = useState(false);
+
+    // state for our Songs
+    const [mySongs, setMySongs] = useState(mySongsInit);
 
     useEffect(() => {
         if (search === null) return;
@@ -36,12 +42,23 @@ const SongSearch = () => {
         };
 
         fetchData();
-    }, [search]);
+
+        // save mySongs on the localStorage - add it on the useEffect
+        localStorage.setItem("mySongs", JSON.stringify(mySongs));
+    }, [search, mySongs]);
 
     // receive data from form
     const handleSearch = (data) => {
         // console.log(data);
         setSearch(data);
+    };
+
+    const handleSaveSong = () => {
+        alert('Saving song on FAVORITES');
+    };
+
+    const handleDeleteSong = () => {
+
     };
 
     return (
@@ -50,8 +67,10 @@ const SongSearch = () => {
                 <HashRouter>
                     <header>
                         <h2>Song Search</h2>
-                        <NavLink className="active" to="/songs">Home</NavLink>
-                        <NavLink className="active" to="/songs/add">Song Table</NavLink>
+                        <nav>
+                            <NavLink className="active" to="/songs">Home</NavLink>
+                            <NavLink className="active" to="/songs/add">Song Table</NavLink>
+                        </nav>
                     </header>
                     {
                         loading && <Loader />
@@ -61,7 +80,7 @@ const SongSearch = () => {
                             <Routes>
                                 <Route path='/' element={
                                     <div>
-                                        <SongForm handleSearch={handleSearch} />
+                                        <SongForm handleSearch={handleSearch} handleSaveSong={handleSaveSong} />
                                         {
                                             search && !loading && <SongDetails
                                                 search={search}
