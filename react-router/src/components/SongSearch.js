@@ -5,6 +5,7 @@ import SongForm from './SongForm';
 import Loader from "./Loader";
 import { HashRouter, NavLink, Route, Routes } from 'react-router-dom';
 import Error404 from '../pages/Error404';
+import SongTable from './SongTable';
 
 // just add an empty array if there no songs
 let mySongsInit = JSON.parse(localStorage.getItem("mySongs")) || [];
@@ -57,13 +58,14 @@ const SongSearch = () => {
         alert('Saving song on FAVORITES');
     };
 
-    const handleDeleteSong = () => {
-
+    // Songs Table will receive this handle
+    const handleDeleteSong = (id) => {
+        alert('deleting song width ID: ', id);
     };
 
     return (
         <>
-            <article className='grid-1-3'>
+            <article className='grid-1-2'>
                 <HashRouter>
                     <header>
                         <h2>Song Search</h2>
@@ -87,11 +89,12 @@ const SongSearch = () => {
                                                 lyric={lyric}
                                                 bio={bio} />
                                         }
+                                        <SongTable mySongs={mySongs} handleDeleteSong={handleDeleteSong} />
                                     </div>
                                 } />
-                                <Route path='/add/:id' element={
+                                <Route path='/view/:id' element={
                                     <div>
-                                        <h2>Table of our Favorite Songs</h2>
+                                        <h2>Your Song</h2>
                                     </div>
                                 } />
                                 <Route path="*" element={<Error404 />} />
