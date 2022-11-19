@@ -6,8 +6,10 @@ import Loader from "./Loader";
 import { HashRouter, NavLink, Route, Routes } from 'react-router-dom';
 import Error404 from '../pages/Error404';
 import SongTable from './SongTable';
+import SongPage from './SongPage';
 
 // just add an empty array if there no songs
+
 let mySongsInit = JSON.parse(localStorage.getItem("mySongs")) || [];
 
 const SongSearch = () => {
@@ -20,7 +22,7 @@ const SongSearch = () => {
     const [mySongs, setMySongs] = useState(mySongsInit);
 
     useEffect(() => {
-        if (search === null) return;
+        // if (search === null) return;
 
         const fetchData = async () => {
             const { artist, song } = search;
@@ -56,11 +58,29 @@ const SongSearch = () => {
 
     const handleSaveSong = () => {
         alert('Saving song on FAVORITES');
+
+        // search, lyric & bio
+        let currentSong = {
+            search,
+            lyric,
+            bio
+        };
+
+        setMySongs((mySongs) => [...mySongs, currentSong]);
+        setSearch(null);
     };
 
     // Songs Table will receive this handle
     const handleDeleteSong = (id) => {
-        alert('deleting song width ID: ', id);
+        // alert(`deleting song width ID: ${id}`);
+
+        let isDelete = window.confirm(`Are you sure to delete the song with the ID: ${id}`);
+
+        if (isDelete) {
+            let songs = mySongs.filter((el, index) => index !== id);
+            setMySongs(songs);
+            localStorage.setItem("mySongs", JSON.stringify(songs));
+        }
     };
 
     return (
@@ -71,7 +91,7 @@ const SongSearch = () => {
                         <h2>Song Search</h2>
                         <nav>
                             <NavLink className="active" to="/songs">Home</NavLink>
-                            <NavLink className="active" to="/songs/add">Song Table</NavLink>
+                            {/* <NavLink className="active" to="/songs/add">Song Table</NavLink> */}
                         </nav>
                     </header>
                     {
@@ -81,20 +101,23 @@ const SongSearch = () => {
                         <Route path='/songs/*' element={
                             <Routes>
                                 <Route path='/' element={
-                                    <div>
-                                        <SongForm handleSearch={handleSearch} handleSaveSong={handleSaveSong} />
-                                        {
-                                            search && !loading && <SongDetails
-                                                search={search}
-                                                lyric={lyric}
-                                                bio={bio} />
-                                        }
-                                        <SongTable mySongs={mySongs} handleDeleteSong={handleDeleteSong} />
-                                    </div>
+                                    <>
+                                        <div>
+                                            <SongForm handleSearch={handleSearch} handleSaveSong={handleSaveSong} />
+                                            {
+                                                search && !loading &&
+                                                <SongDetails search={search} lyric={lyric} bio={bio} />
+                                            }
+                                        </div>
+                                        <div>
+                                            <SongTable mySongs={mySongs} handleDeleteSong={handleDeleteSong} />
+                                        </div>
+                                    </>
                                 } />
-                                <Route path='/view/:id' element={
+                                <Route path='/:id' element={
                                     <div>
                                         <h2>Your Song</h2>
+                                        <SongPage mySongs={mySongs} />
                                     </div>
                                 } />
                                 <Route path="*" element={<Error404 />} />

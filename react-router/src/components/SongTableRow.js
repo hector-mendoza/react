@@ -1,17 +1,28 @@
-import { Navigate } from "react-router";
+import { useNavigate } from "react-router";
 
 const SongTableRow = ({ el, id, handleDeleteSong }) => {
     console.log(el);
 
+    let { bio, search } = el;
+    let avatar = bio.artists[0].strArtistThumb;
+
+    let avatarStyles = {
+        width: "auto",
+        height: "40px"
+    };
+
+    let navigate = useNavigate();
 
     return (
         <tr>
             {/* avatar, artist, song & actions*/}
-            <img src="" />
-            <td>Artist</td>
-            <td>Song</td>
             <td>
-                <button onClick={() => <Navigate to={`/songs/view/${id}`} />}>View More</button>
+                <img style={avatarStyles} src={avatar} alt={search.artist} />
+            </td>
+            <td>{search.artist}</td>
+            <td>{search.song}</td>
+            <td>
+                <button onClick={() => navigate(`/songs/${id}`)}>View More</button>
                 <button onClick={() => handleDeleteSong(id)}>Delete</button>
             </td>
         </tr>
