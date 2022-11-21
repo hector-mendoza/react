@@ -22,7 +22,7 @@ const SongSearch = () => {
     const [mySongs, setMySongs] = useState(mySongsInit);
 
     useEffect(() => {
-        // if (search === null) return;
+        if (search === null) return;
 
         const fetchData = async () => {
             const { artist, song } = search;
@@ -66,8 +66,10 @@ const SongSearch = () => {
             bio
         };
 
-        setMySongs((mySongs) => [...mySongs, currentSong]);
+        let songs = [...mySongs, currentSong];
+        setMySongs(songs);
         setSearch(null);
+        localStorage.setItem("mySongs", JSON.stringify(songs));
     };
 
     // Songs Table will receive this handle

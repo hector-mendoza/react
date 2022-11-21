@@ -93,7 +93,7 @@ const CrudApi = () => {
             <article className="grid-1-2">
                 <HashRouter>
                     <header>
-                        <h2>CRUD Api con Rutas</h2>
+                        <h2>CRUD-API con Rutas</h2>
                         <nav>
                             <NavLink className="active" to="santos/">Santos</NavLink>
                             <NavLink className="active" to="santos/agregar">Agregar</NavLink>
