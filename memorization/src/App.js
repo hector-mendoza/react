@@ -7,7 +7,7 @@ function App() {
       <h1>Theory</h1>
       <hr />
       <h2>
-        <a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbXVxRENNNFJ1bS04Z2Z4Wk9iQy0xRkRibWVUZ3xBQ3Jtc0tsZ2pZVFk0SDhqaFdxRTBKWHFsODFXb3pBRmlrVDFYdmZuR0pJUFhYMHV3QnNreE1VU2tKNnJXVEc5bHQ3VnVFblV3Vzc2ejNYRTRHZHJ0OW53cjJ5cUQ0WGxnMTcxOWQzQ2NuVXIwX0R0Qm5IXzdJWQ&q=https%3A%2F%2Fes.reactjs.org%2Fdocs%2Freact-api.html%23reactmemo&v=d8MaIRB8HfQ"
+        <a href="https://es.reactjs.org/docs/react-api.html#reactmemo"
           target="_blank" rel="noreferrer">Memo</a>
       </h2>
       <ul>
@@ -37,7 +37,7 @@ function App() {
       </ul>
       <hr />
       <h2>
-        <a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbXVxRENNNFJ1bS04Z2Z4Wk9iQy0xRkRibWVUZ3xBQ3Jtc0tsZ2pZVFk0SDhqaFdxRTBKWHFsODFXb3pBRmlrVDFYdmZuR0pJUFhYMHV3QnNreE1VU2tKNnJXVEc5bHQ3VnVFblV3Vzc2ejNYRTRHZHJ0OW53cjJ5cUQ0WGxnMTcxOWQzQ2NuVXIwX0R0Qm5IXzdJWQ&q=https%3A%2F%2Fes.reactjs.org%2Fdocs%2Freact-api.html%23reactmemo&v=d8MaIRB8HfQ"
+        <a href="https://es.reactjs.org/docs/hooks-reference.html#usecallback"
           target="_blank" rel="noreferrer">useCallback</a>
       </h2>
       <ul>
@@ -46,6 +46,18 @@ function App() {
         </li>
         <li>Úsalo siempre que se pase una función como <b>prop</b> a un componente memorizado.</li>
         <li>Úsalo siempre que se pase una función como parámetro de un efecto.</li>
+      </ul>
+      <hr />
+      <h2>
+        <a href="https://es.reactjs.org/docs/react-api.html#reactmemo"
+          target="_blank" rel="noreferrer">useMemo</a>
+      </h2>
+      <ul>
+        <li>
+          Memorizar un valor calculado, es decir, el resultado de una función.
+        </li>
+        <li>Genera propiedades computadas.</li>
+        <li>Úsalo en procesos pesados.</li>
       </ul>
       <hr />
       <Counter />
