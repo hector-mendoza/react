@@ -34,6 +34,8 @@ const translations = {
         }, 
 };
 
+const initialAuth = false;
+
 const MyPage = () => {
 
     // Theme State
@@ -42,6 +44,9 @@ const MyPage = () => {
     // Language State
     const [language, setLanguage] = useState(initialLanguage);
     const [texts, setTexts] = useState(translations[language]);
+
+    // Session State
+    const [auth, setAuth] = useState(initialAuth);
 
     // function to handle the Theme change
     const handleTheme = (e) => {
@@ -65,10 +70,25 @@ const MyPage = () => {
         }
     };
 
+    // function to handle the "Auth"
+    const handleAuth = (e) => {
+        if (auth) {
+            setAuth(false);
+        } else {
+            setAuth(true);
+        }
+    };
+
     return (
         <div className={`my-page ${theme}`}>
-            <Header theme={theme} handleTheme={handleTheme} handleLanguage={handleLanguage} texts={texts} />
-            <Main theme={theme} texts={texts}/>
+            <Header theme={theme} 
+            handleTheme={handleTheme} 
+            handleLanguage={handleLanguage} 
+            texts={texts} 
+            auth={auth}
+            handleAuth={handleAuth}
+            />
+            <Main theme={theme} texts={texts} auth={auth}/>
             <Footer theme={theme} texts={texts}/>
         </div>
     );
