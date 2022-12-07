@@ -1,14 +1,14 @@
 import { ThemeProvider } from "../context/ThemeContext";
+import { LanguageProvider } from "../context/LanguageContext";
 import Wrapper from "./Wrapper";
 
 
 const MyPageContext = () => {
-
-
-
     return (
         <ThemeProvider>
-            <Wrapper />
+            <LanguageProvider>
+                <Wrapper />
+            </LanguageProvider>
         </ThemeProvider>
     );
 }
