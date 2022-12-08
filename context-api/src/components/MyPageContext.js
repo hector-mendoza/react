@@ -1,15 +1,18 @@
 import { ThemeProvider } from "../context/ThemeContext";
 import { LanguageProvider } from "../context/LanguageContext";
-import Wrapper from "./Wrapper";
+import { AuthProvider } from "../context/AuthContext";
 
+import Wrapper from "./Wrapper";
 
 const MyPageContext = () => {
     return (
-        <ThemeProvider>
-            <LanguageProvider>
-                <Wrapper />
-            </LanguageProvider>
-        </ThemeProvider>
+        <AuthProvider>
+            <ThemeProvider>
+                <LanguageProvider>
+                    <Wrapper />
+                </LanguageProvider>
+            </ThemeProvider>
+        </AuthProvider>
     );
 }
 
