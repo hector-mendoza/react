@@ -1,4 +1,6 @@
+import CrudApi from "./components/CrudApi";
 import MyPageContext from "./components/MyPageContext";
+import { CrudProvider } from "./context/CrudContext";
 
 function App() {
   return (
@@ -7,6 +9,10 @@ function App() {
       <h3>
         <a target="_blank" href="https://es.reactjs.org/docs/context.html" rel="noreferrer">Documentation</a>
       </h3>
+      <hr />
+      <CrudProvider>
+        <CrudApi />
+      </CrudProvider>
       <hr />
       <MyPageContext />
     </div>
