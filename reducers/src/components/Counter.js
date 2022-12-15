@@ -2,6 +2,10 @@ import { useReducer  } from "react";
 
 const initialState = { count : 0 };
 
+const init = (initialState) => {
+    return { count: initialState.count + 100 }
+};
+
 const TYPES = {
     INCREMENT: "INCREMENT",
     INCREMENT_5: "INCREMENT_5",
@@ -25,7 +29,7 @@ function reducer (state, action) {
             return { count: state.count - action.payload }
 
         case TYPES.RESET:
-            return { count: initialState }
+            return { count: initialState.count }
 
         default:
             return state;
@@ -36,7 +40,8 @@ const Counter = () => {
     // const [count, setCount] = useState(0);
 
     // Hook useReducer
-    const [state, dispatch] = useReducer(reducer, initialState);
+    // init: OPTIONAL - it gets applied only when the component has been mounted.
+    const [state, dispatch] = useReducer(reducer, initialState, init);
 
     // type => defines the action type that the REDUCER function will follow
     // payload => will be the new value => action on the REDUCER function

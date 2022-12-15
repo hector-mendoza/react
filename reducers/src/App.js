@@ -1,3 +1,4 @@
+import BetterCounter from "./components/BetterCounter";
 import Counter from "./components/Counter";
 
 
@@ -7,7 +8,9 @@ function App() {
       <h1>
         useReducer
       </h1>
-      <hr/>
+      <hr />
+      <BetterCounter />
+      <hr />
       <Counter />
     </div>
   );
