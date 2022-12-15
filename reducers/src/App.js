@@ -1,5 +1,6 @@
 import BetterCounter from "./components/BetterCounter";
 import Counter from "./components/Counter";
+import ShoppingCart from "./components/ShoppingCart";
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <h1>
         useReducer
       </h1>
+      <ShoppingCart />
       <hr />
       <BetterCounter />
       <hr />
