@@ -23,7 +23,20 @@ export const shoppingInitialState = {
 
 export function shoppingReducer(state, action) {
     switch (action.type) {
-        case TYPES.ADD_TO_CART: { }
+        case TYPES.ADD_TO_CART: {
+            let newItem = state.products.find((product) => product.id === action.payload);
+
+            // console.log(newItem);
+
+            // return what the state already has + the cart with existent items + new items
+            return {
+                ...state,
+                cart: [
+                    ...state.cart,
+                    newItem,
+                ],
+            }
+        }
 
         case TYPES.REMOVE_ONE_FROM_CART: { }
 
