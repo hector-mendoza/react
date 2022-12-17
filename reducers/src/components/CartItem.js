@@ -1,12 +1,19 @@
 const CartItem = ({ data, deleteFromCart }) => {
 
-    let { id, name, price } = data;
+    let { id, name, price, quantity } = data;
 
     return (
         <div style={{ borderBottom: "thin solid gray", paddingBottom: "25px" }}>
-            <h5>{name}</h5>
-            <p><strong>{price}</strong></p>
-            <button onClick={""}>REMOVE ONE</button>
+            <h4>{name}</h4>
+            <p><strong>${price}</strong>x<small>{quantity}</small></p>
+            <h5>
+                <strong>SUBTOTAL: </strong>
+                $
+                {
+                    quantity * price
+                }
+            </h5>
+            <button onClick={""} style={{ marginRight: "15px" }}>REMOVE ONE</button>
             <button onClick={""}>REMOVE ALL</button>
         </div>
     );
