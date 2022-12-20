@@ -13,8 +13,8 @@ const CartItem = ({ data, deleteFromCart }) => {
                     quantity * price
                 }
             </h5>
-            <button onClick={""} style={{ marginRight: "15px" }}>REMOVE ONE</button>
-            <button onClick={""}>REMOVE ALL</button>
+            <button onClick={() => deleteFromCart(id) } style={{ marginRight: "15px" }}>REMOVE ONE</button>
+            <button onClick={() => deleteFromCart(id, true) }>REMOVE ALL</button>
         </div>
     );
 }
