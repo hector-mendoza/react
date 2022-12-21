@@ -1,0 +1,39 @@
+{
+  "santos": [
+    {
+      "id": 1,
+      "name": "Seiya",
+      "constellation": "Pegasos"
+    },
+    {
+      "id": 2,
+      "name": "Shiryu",
+      "constellation": "Dragón"
+    },
+    {
+      "id": 3,
+      "name": "Hyoga",
+      "constellation": "Cisne"
+    },
+    {
+      "id": 5,
+      "name": "Ikki",
+      "constellation": "Fénix"
+    },
+    {
+      "name": "Patricia Soria",
+      "constellation": "Dragones",
+      "id": 1671644596629
+    },
+    {
+      "name": "Patricia Soria Cisneros",
+      "constellation": "holi",
+      "id": 1671645358268
+    },
+    {
+      "name": "Hector",
+      "constellation": "Aquario",
+      "id": 1671645420194
+    }
+  ]
+}

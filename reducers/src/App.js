@@ -1,5 +1,6 @@
 import BetterCounter from "./components/BetterCounter";
 import Counter from "./components/Counter";
+import CrudApi from "./components/CrudApi";
 import ShoppingCart from "./components/ShoppingCart";
 
 
@@ -9,6 +10,8 @@ function App() {
       <h1>
         useReducer
       </h1>
+      <CrudApi />
+      <hr />
       <ShoppingCart />
       <hr />
       <BetterCounter />
