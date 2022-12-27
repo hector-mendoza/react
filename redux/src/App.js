@@ -1,4 +1,5 @@
 import { Provider } from "react-redux";
+import Counter from "./components/Counter";
 import store from "./store";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
       <div style={{ textAlign: "center" }}>
         <h1>Redux</h1>
         <hr />
+        <Counter />
       </div>
     </Provider>
   );
